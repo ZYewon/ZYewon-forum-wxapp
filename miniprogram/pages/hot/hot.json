@@ -1,0 +1,14 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "热门",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f1f2f3",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "hot-post": "/components/HotPost/HotPost",
+    "hot-comments": "/components/HotComments/HotComments",
+    "sign-top": "/components/SignTop/SignTop"
+  }
+}

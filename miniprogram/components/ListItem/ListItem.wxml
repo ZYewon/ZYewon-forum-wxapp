@@ -1,0 +1,25 @@
+<!--components/ListItem/ListItem.wxml-->
+<view class="list-item" bindtap="goDetail">
+  <view class="item-title">
+    <text class="type type-{{item.catalog}}">{{filters.formatCatalog(item.catalog)}}</text>
+    <text class="title">{{item.title}}</text>
+  </view>
+
+  <view class="item-author">
+    <image class="author-avatar" src="{{item.uid ? item.uid.pic : '/static/images/avatar.jpg'}}"></image>
+    <text class="author-nickname">{{item.uid ? item.uid.nickname :"未知用户"}}</text>
+  </view>
+
+  <view class="item-content">
+    <rich-text class="content" nodes="{{item.content}}"></rich-text>
+    <image class="post-bg" wx:if="{{item.cover}}" src="{{item.cover ? item.cover : ''}}"></image>
+  </view>
+
+  <view class="item-outher">
+    <text class="answer">{{ filters.formatCount(item.answer) }} 回复</text>
+    <text class="date">{{item.created}}</text>
+  </view>
+</view>
+
+<wxs src="../../utils/escapeHtml.wxs" module="escapeHtml"></wxs>
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>

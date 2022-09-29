@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f1f2f3",
+  "usingComponents": {
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

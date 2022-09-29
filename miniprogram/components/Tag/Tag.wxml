@@ -1,0 +1,4 @@
+<!--components/Tag/Tag.wxml-->
+<view class="tag {{isActive ? 'active' : ''}}">
+  <text>{{title}}</text>
+</view>

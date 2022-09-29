@@ -1,0 +1,93 @@
+.list-item {
+  padding: 20rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  .item-title {
+    display: flex;
+    align-items: center;
+    gap: 10rpx;
+    .type {
+      font-size: 24rpx;
+      padding: 2rpx 16rpx;
+      border-radius: 40rpx;
+      border-bottom-left-radius: 0;
+      color: #fff;
+      &.type-ask {
+        background-color: #02d199;
+      }
+      &.type-share {
+        background-color: #feb21e;
+      }
+      &.type-discuss {
+        background-color: #fe1e1e;
+      }
+      &.type-advice {
+        background-color: #0166f8;
+      }
+      &.type-notice {
+        background-color: #00a3b8;
+      }
+      &.type-news {
+        background-color: #33cb61;
+      }
+    }
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #333;
+    }
+  }
+  .item-author {
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+    .author-avatar {
+      width: 50rpx;
+      height: 50rpx;
+      border-radius: 50%;
+      background-color: #f1f2f3;
+    }
+    .author-nickname {
+      font-size: 24rpx;
+      color: #999;
+    }
+  }
+  .item-content {
+    display: flex;
+    justify-content: space-between;
+    .content {
+      color: #888;
+      font-size: 28rpx;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      padding-right: 10rpx;
+      line-height: 1.5;
+    }
+    .post-bg {
+      flex-shrink: 0;
+      width: 160rpx;
+      height: 120rpx;
+      background-color: #f1f2f3;
+      display: block;
+      margin-left: 20rpx;
+    }
+  }
+  .item-outher {
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+    font-size: 24rpx;
+    color: #999;
+  }
+}

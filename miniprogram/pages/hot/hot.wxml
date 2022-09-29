@@ -1,0 +1,13 @@
+<!--pages/hot/hot.wxml-->
+<view class="hot page">
+  <view class="tabs">
+    <van-tabs active="{{ active }}" bind:change="onChange" color="#02d199" title-active-color="#02d199">
+      <van-tab wx:for="{{tabList}}" title="{{item.title}}" name="{{item.key}}"></van-tab>
+    </van-tabs>
+  </view>
+  <view class="scroll">
+    <hot-post wx:if="{{active === 0}}"></hot-post>
+    <hot-comments wx:elif="{{active === 1}}"></hot-comments>
+    <sign-top wx:else></sign-top>
+  </view>
+</view>

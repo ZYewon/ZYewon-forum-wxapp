@@ -1,0 +1,32 @@
+<!--components/CommentsList/CommentsList.wxml-->
+<view class="comments-list">
+  <block wx:if="{{commentsList.length > 0}}">
+    <view class="comments-item" wx:for="{{commentsList}}">
+      <view class="top">
+        <view class="userinfo">
+          <image src="{{item.cuid?item.cuid.pic :''}}" class="avatar" mode="aspectFill"></image>
+          <view class="user">
+            <text class="nickname">{{item.cuid ? item.cuid.nickname : ''}}</text>
+            <text class="created">{{item.created}} 回复了你</text>
+          </view>
+        </view>
+
+        <view class="reply">
+          <van-icon name="edit" size="28rpx" />
+          <text>回复</text>
+        </view>
+      </view>
+      <rich-text nodes="{{filter.escapeHtml(item.content)}}" class="content">
+      </rich-text>
+      <view class="post">
+        <view class="title">{{item.tid ? item.tid.title : ''}}</view>
+        <rich-text nodes="{{filter.escapeHtml(item.tid ? item.tid.content : '')}}" class="post-content"></rich-text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">暂无评论</view>
+  </block>
+</view>
+
+<wxs src="../../utils/escapeHtml.wxs" module="filter"></wxs>

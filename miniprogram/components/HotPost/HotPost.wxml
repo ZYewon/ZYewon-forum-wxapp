@@ -1,0 +1,22 @@
+<!--components/HotPost/HotPost.wxml-->
+<scroll-view scroll-y class="hot-post" refresher-enabled bindscrolltolower="handleScrollToLower" bindrefresherrefresh="handleRefresh" refresher-triggered="{{isRefresh}}">
+  <view class="tag-container">
+    <tag bindtap="handleTagClick" data-index="{{index}}" wx:for="{{tagList}}" title="{{item}}" isActive="{{currentIndex === index}}"></tag>
+  </view>
+  <view class="post-list">
+    <block wx:if="{{postList.length > 0}}">
+      <view class="list-item" wx:for="{{postList}}">
+        <text class="index {{'index-'+(index+1)}}">{{index < 9 ? '0' +(index+1) : index+1}}</text>
+            <view class="post-info">
+              <view class="title line-2">{{item.title}}</view>
+              <view class="text">{{filter.formatCount(item.answer)}} 评论</view>
+            </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="empty">还没有帖子/(ㄒoㄒ)/~~</view>
+    </block>
+  </view>
+</scroll-view>
+
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>

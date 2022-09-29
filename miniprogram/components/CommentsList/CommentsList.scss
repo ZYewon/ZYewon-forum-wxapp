@@ -1,0 +1,89 @@
+/* components/CommentsList/CommentsList.wxss */
+.comments-list {
+  padding: 20rpx;
+  .comments-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+    margin-bottom: 50rpx;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .userinfo {
+        display: flex;
+        align-items: center;
+        gap: 20rpx;
+        .avatar {
+          width: 72rpx;
+          height: 72rpx;
+          border-radius: 50%;
+          background-color: #f1f2f3;
+        }
+        .user {
+          display: flex;
+          flex-direction: column;
+          gap: 15rpx;
+          .nickname {
+            font-size: 28rpx;
+            font-weight: bold;
+          }
+          .created {
+            font-size: 22rpx;
+            color: #999;
+          }
+        }
+      }
+      .reply {
+        display: flex;
+        align-items: center;
+        gap: 10rpx;
+        color: rgba(153, 153, 153, 1);
+        font-size: 24rpx;
+      }
+    }
+    .content {
+      font-size: 30rpx;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .post {
+      background-color: #eff0fc;
+      border-radius: 20rpx;
+      padding: 20rpx;
+      display: flex;
+      flex-direction: column;
+      gap: 20rpx;
+      .title {
+        font-size: 28rpx;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: rgb(51, 51, 51);
+      }
+      .post-content {
+        font-size: 24rpx;
+        color: rgb(102, 102, 102);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+}
+
+.empty {
+  padding: 40rpx;
+  color: #999;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

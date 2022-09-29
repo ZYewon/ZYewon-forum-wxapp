@@ -1,0 +1,26 @@
+<view class="mobile-login">
+  <view class="title-container">
+    <text class="title">登陆注册更精彩</text>
+    <text class="desc">未注册的手机号验证后自动创建账号</text>
+  </view>
+  <view class="send-code">
+    <!-- <van-cell-group> -->
+    <van-field bind:input="handleInputMobile" type="number" value="{{ sms }}" center clearable label="手机号" placeholder="请输入手机号" use-button-slot>
+      <van-button bind:click="sendBtnClick" disabled="{{disabled}}" color="{{btnColor}}" slot="button" size="small">
+        {{btnText}}
+      </van-button>
+    </van-field>
+    <van-field bind:input="handleInputCode" type="number" value="{{ code }}" center clearable label="验证码" placeholder="请输入验证码">
+
+    </van-field>
+    <!-- </van-cell-group> -->
+  </view>
+  <view class="send-btn">
+    <van-button block color="#02d199">立即登录</van-button>
+  </view>
+
+  <view class="footer" bindtap="goWxLogin">
+    <van-icon name="wechat" color="#1bb723" size="100rpx"></van-icon>
+    <text>微信登陆</text>
+  </view>
+</view>

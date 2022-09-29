@@ -1,0 +1,23 @@
+<!--pages/msg/msg.wxml-->
+<view class="msg ">
+  <view class="msg-container page" wx:if="{{isLogin}}">
+    <view class="tabs">
+      <van-tabs active="{{ active }}" bind:change="onChange" color="#02d199" title-active-color="#02d199">
+        <van-tab title="评论" name="comments"></van-tab>
+        <van-tab title="点赞" name="hands"></van-tab>
+      </van-tabs>
+    </view>
+
+    <scroll-view scroll-y class="scroll msg-content">
+      <!-- 评论列表 -->
+      <comments-list :commentsList="{{commentsList}}"></comments-list>
+      <!-- 点赞列表 -->
+    </scroll-view>
+  </view>
+  <view class="info" wx:else>
+    <view class="center">
+      登陆过后查看评论&点赞消息
+    </view>
+    <van-button bind:click="goLogin" plain hairline type="primary">去登陆</van-button>
+  </view>
+</view>

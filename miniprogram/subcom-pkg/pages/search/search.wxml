@@ -1,0 +1,36 @@
+<!--subcom-pkg/pages/search/search.wxml-->
+<view class="search-page">
+  <view class="search-input">
+    <z-search bind:search="handleSearch" bind:clear="handleSearchClear" bind:change-input="handleSearchChange" value="{{searchValue}}" isComputedTop="{{false}}">
+      <view slot="action" bindtap="handleSearch">搜索</view>
+    </z-search>
+    <block wx:if="{{searchSuggestion.length > 0}}">
+      <view class="search-result" wx:for="{{searchSuggestion}}" wx:key="{{item._id}}" bindtap="goDetail" data-detail="{{item}}">{{item.title}}</view>
+    </block>
+
+    <view class="empty" wx:elif="{{searchSuggestion.length === 0 && showResult}}">这里空空如也~~</view>
+  </view>
+
+  <!-- 搜索历史 -->
+  <view class="search-history" wx:if="{{historyList.length > 0 && searchSuggestion.length === 0}}">
+    <view class="history-title">
+      <text>搜索历史</text>
+      <van-icon name="delete-o" size="32rpx" bindtap="handleDeleteHis" />
+    </view>
+    <!-- 标签列表区域 -->
+    <view class="history-list">
+      <van-tag size="large" wx:for="{{historyList}}" wx:key="{{item}}" color="#f1f2f3" text-color="#333" bindtap="querySearch" data-tab="{{item}}"> {{item}}</van-tag>
+    </view>
+  </view>
+  <!-- 热门推荐 -->
+  <view class="search-history" wx:if="{{!showResult}}">
+    <view class="history-title">
+      <text>热门推荐</text>
+    </view>
+    <!-- 标签列表区域 -->
+    <view class="history-list">
+      <van-tag wx:for="{{hotList}}" size="large" color="#f1f2f3" text-color="#333" bindtap="querySearch" data-tab="{{item}}"> {{item}}</van-tag>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

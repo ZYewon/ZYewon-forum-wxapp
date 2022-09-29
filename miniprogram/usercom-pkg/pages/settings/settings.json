@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#f1f2f3",
+  "navigationBarTitleText": "修改设置",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

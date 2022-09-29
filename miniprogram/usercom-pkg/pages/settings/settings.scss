@@ -1,0 +1,47 @@
+/* usercom-pkg/pages/settings/settings.wxss */
+.settings {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // background-color: #f1f2f3;
+  gap: 50rpx;
+  .avatar {
+    width: 100vw;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    padding-top: 30rpx;
+    .avatar-box {
+      padding: 0;
+      position: relative;
+      width: 220rpx;
+      height: 220rpx;
+      border-radius: 50%;
+      overflow: hidden;
+      .img {
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+      }
+      .bg {
+        position: absolute;
+        bottom: 0;
+        height: 50rpx;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+      }
+    }
+  }
+  .radio {
+    display: flex;
+  }
+}
+.submit {
+  padding: 0 50rpx;
+}

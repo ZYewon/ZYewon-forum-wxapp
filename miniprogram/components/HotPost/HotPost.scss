@@ -1,0 +1,63 @@
+/* components/HotPost/HotPost.wxss */
+.hot-post {
+  height: 100%;
+  overflow: hidden;
+}
+.tag-container {
+  padding: 0 30rpx 30rpx;
+  display: flex;
+  gap: 20rpx;
+}
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin: 0 30rpx;
+  margin-bottom: 30rpx;
+  .list-item {
+    display: flex;
+    gap: 40rpx;
+    align-items: center;
+    border-bottom: 1px solid #f1f2f3;
+    padding: 20rpx 0 20rpx;
+    &:last-child {
+      border-bottom: none;
+    }
+    .index {
+      color: #a5a5a8;
+      font-size: 40rpx;
+      font-weight: bold;
+      &.index-1 {
+        color: #c28d84;
+      }
+      &.index-2 {
+        color: #ae805b;
+      }
+      &.index-3 {
+        color: #cfbe86;
+      }
+    }
+    .post-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30rpx;
+      .title {
+        font-size: 32rpx;
+        font-weight: bold;
+      }
+      .text {
+        font-size: 26rpx;
+        color: #999;
+      }
+    }
+  }
+}
+.empty {
+  padding: 40rpx;
+  color: #999;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

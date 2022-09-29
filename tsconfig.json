@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "ES2020",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "lib": ["ES2020"],
+    "typeRoots": ["./typings"],
+    "baseUrl": ".",
+    "types": ["miniprogram-api-typings"],
+    "paths": {
+      "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "miniprogram/store/user.js",
+    "miniprogram/pages/home/home.js",
+    "miniprogram/subcom-pkg/pages/auth/auth.js",
+    "miniprogram/subcom-pkg/pages/mobile-login/mobile-login.js",
+    "miniprogram/components/MessageInput/MessageInput.js",
+    "miniprogram/pages/msg/msg.js",
+    "miniprogram/components/CommentsList/CommentsList.js",
+    "miniprogram/pages/hot/hot.js",
+    "miniprogram/components/HotPost/HotPost.js",
+    "miniprogram/components/Tag/Tag.js",
+    "miniprogram/components/HotComments/HotComments.js",
+    "miniprogram/components/SignTop/SignTop.js",
+    "miniprogram/pages/center/center.js",
+    "miniprogram/subcom-pkg/pages/detail/detail.js",
+    "miniprogram/components/HighLight/HighLight.js",
+    "miniprogram/subcom-pkg/pages/add-post/add-post.js"
+  ],
+  "exclude": ["node_modules"]
+}

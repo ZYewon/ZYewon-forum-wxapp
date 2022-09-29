@@ -1,0 +1,8 @@
+<!--components/Search/Search.wxml-->
+<view class="search" style="padding-top: {{ statusBarHeight }}px; width: {{width}};">
+  <van-search bind:search="handleSearch" bind:clear="handleSearchClear" bind:click-input="handleSearchClick" disabled="{{disabled}}" value="{{value}}" bind:change="handleSearchChange" shape="round" placeholder="请输入搜索关键词" use-action-slot>
+    <view slot="action">
+      <slot name="action"></slot>
+    </view>
+  </van-search>
+</view>

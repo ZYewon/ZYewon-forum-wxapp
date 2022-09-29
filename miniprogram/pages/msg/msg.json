@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "消息",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f1f2f3",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "comments-list": "/components/CommentsList/CommentsList"
+  }
+}

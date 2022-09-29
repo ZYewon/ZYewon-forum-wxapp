@@ -1,0 +1,23 @@
+<!--components/HotPost/HotPost.wxml-->
+<scroll-view scroll-y class="hot-post" refresher-enabled bindscrolltolower="handleScrollToLower" bindrefresherrefresh="handleRefresh" refresher-triggered="{{isRefresh}}">
+  <view class="tag-container">
+    <tag bindtap="handleTagClick" data-index="{{index}}" wx:for="{{tagList}}" title="{{item}}" isActive="{{currentIndex === index}}"></tag>
+  </view>
+  <view class="post-list">
+    <block wx:if="{{signList.length > 0}}">
+      <view class="list-item" wx:for="{{signList}}">
+        <view class="index {{'index-'+(index+1)}}">
+          {{index < 9 ? '0' +(index+1) : index+1}} </view>
+            <image src="{{item.uid ? item.uid.pic : ''}}" class="avatar" mode="aspectFill"></image>
+            <view class="post-info">
+              <view class="title line-1">{{item.uid ? item.uid.nickname :"未知用户"}}</view>
+              <view class="text" wx:if="{{currentIndex === 0}}">总签到{{item.count}}天</view>
+              <view class="text" wx:else>{{item.created}}</view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+      <view class="empty">还未有人签到/(ㄒoㄒ)/~~</view>
+    </block>
+  </view>
+</scroll-view>

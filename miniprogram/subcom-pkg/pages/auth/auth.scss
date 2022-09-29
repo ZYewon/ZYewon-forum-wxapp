@@ -1,0 +1,40 @@
+/* subcom-pkg/pages/auth/auth.wxss */
+.auth {
+  height: 100vh;
+  background-color: #f1f2f3;
+
+  .title {
+    padding-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30rpx;
+    .logo {
+      width: 168rpx;
+      height: 168rpx;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 10rpx rgba($color: #000000, $alpha: 0.1);
+    }
+    .text {
+      font-size: 28rpx;
+      font-weight: 600;
+    }
+  }
+  .container {
+    margin-top: 80rpx;
+    .btns {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 40rpx;
+      padding: 60rpx;
+      .wechat-btn {
+        display: flex;
+        align-items: center;
+        gap: 10rpx;
+      }
+    }
+  }
+}

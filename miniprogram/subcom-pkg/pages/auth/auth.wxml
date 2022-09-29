@@ -1,0 +1,19 @@
+<!--subcom-pkg/pages/auth/auth.wxml-->
+<view class="auth">
+  <view class="title">
+    <image class="logo" src="/static/images/logo.png" mode="aspectFill"></image>
+    <text class="text">ZYewon交流社区</text>
+  </view>
+  <view class="container">
+    <view class="btns">
+      <van-button color="#02d199" type="primary" block bindtap="wxLogin">
+        <view class="wechat-btn">
+          <van-icon name="wechat" size="36rpx" />
+          <text>微信登陆</text>
+        </view>
+      </van-button>
+      <van-button color="#02d199" block plain type="default" bindtap="goMobileLogin">手机号登陆
+      </van-button>
+    </view>
+  </view>
+</view>

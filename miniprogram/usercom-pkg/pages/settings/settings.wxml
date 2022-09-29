@@ -1,0 +1,29 @@
+<view class="settings">
+  <view class="avatar">
+    <button class="avatar-box" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="img" src="{{userinfo.pic || '/static/images/avatar.jpg'}}" mode="aspectFill"></image>
+      <view class="bg">
+        <van-icon name="photograph" color="#fff" />
+      </view>
+    </button>
+  </view>
+  <view class="input-container">
+
+    <van-cell-group>
+      <van-field label="用户名" value="{{ userinfo.username }}" placeholder="请输入用户名" bind:change="onChange" data-field="username" />
+      <van-field label="昵称" value="{{ userinfo.nickname}}" placeholder="请输入昵称" bind:change="onChange" data-field="nickname" />
+      <van-cell bind:click="handleGenderClick" title="性别" value="{{userinfo.gender || '请选择'}}" is-link arrow-direction="down" />
+      <van-field label="城市" value="{{ userinfo.location }}" placeholder="请输入城市" bind:change="onChange" data-field="location" />
+      <van-field label="个性签名" value="{{ userinfo.remark }}" placeholder="留下你帅气的个性签名吧！" bind:change="onChange" data-field="remark" />
+    </van-cell-group>
+  </view>
+  <view class="submit" bindtap="handleSubmit">
+    <van-button form-type="submit" color="#02d199" block>提交</van-button>
+  </view>
+  <view class="picker-select" wx:if="{{showPicker}}">
+    <view class="mask"></view>
+    <view class="picker">
+      <van-picker show-toolbar title="请选择性别" columns="{{ genders }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+    </view>
+  </view>
+</view>

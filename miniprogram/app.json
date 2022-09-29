@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/center/center",
+    "pages/hot/hot",
+    "pages/msg/msg"
+  ],
+  "subPackages": [
+    {
+      "root": "subcom-pkg",
+      "pages": [
+        "pages/search/search",
+        "pages/auth/auth",
+        "pages/mobile-login/mobile-login",
+        "pages/detail/detail",
+        "pages/add-post/add-post"
+      ]
+    },
+    {
+      "root": "usercom-pkg",
+      "pages": [
+        "pages/settings/settings",
+        "pages/mypost/mypost",
+        "pages/sign/sign",
+        "pages/book/book",
+        "pages/about/about",
+        "pages/support/support",
+        "pages/lock/lock"
+      ]
+    }
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fafafa",
+    "selectedColor": "#02d199",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./static/images/tab_home_no.png",
+        "selectedIconPath": "./static/images/tab_home_yes.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "消息",
+        "iconPath": "./static/images/tab_news_no.png",
+        "selectedIconPath": "./static/images/tab_news_yes.png"
+      },
+      {
+        "pagePath": "pages/hot/hot",
+        "text": "热门",
+        "iconPath": "./static/images/tab_popular_no.png",
+        "selectedIconPath": "./static/images/tab_popular_yes.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "./static/images/tab_my_no.png",
+        "selectedIconPath": "./static/images/tab_my_yes.png"
+      }
+    ]
+  }
+}

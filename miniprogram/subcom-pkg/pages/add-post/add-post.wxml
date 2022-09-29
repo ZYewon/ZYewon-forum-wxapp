@@ -1,0 +1,51 @@
+<!--subcom-pkg/pages/add-post/add-post.wxml-->
+<view class="add-post">
+
+  <van-field value="{{ title }}" placeholder="请输入帖子标题" bind:change="titleChange" />
+  <van-field autosize type="textarea" value="{{ content }}" placeholder="请输入帖子内容" bind:change="contentChange" />
+
+  <view class="post-cover pd">
+    <view class="cover-title">设置封面图片</view>
+    <van-uploader bind:delete="handleDeleteCover"  file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1" />
+  </view>
+  <view class="picker-input mg" bindtap="handlePickerInputClick" data-key="catalogList">
+    <view class="label" data-key="catalogList">
+      发帖类型
+    </view>
+    <view class="input" data-key="catalogList">
+      <view class="placehoader" data-key="catalogList">{{catalog || '请选择'}}</view>
+      <van-icon name="arrow-down" data-key="catalogList" />
+    </view>
+  </view>
+  <view class="picker-input mg" bindtap="handlePickerInputClick" data-key="favsList">
+    <view class="label" data-key="favsList">
+      发帖积分
+    </view>
+    <view class="input" data-key="favsList">
+      <view class="placehoader" data-key="favsList">{{fav || '请选择'}}</view>
+      <van-icon name="arrow-down" data-key="favsList" />
+    </view>
+  </view>
+  <view class="picker-select" wx:if="{{action !== ''}}">
+    <view class="mask"></view>
+    <view class="picker">
+      <van-picker bind:cancel="pickerCancel" bind:confirm="pickerConfirm" show-toolbar title="请选择" columns="{{ columns[action] }}" bind:change="onChange" />
+    </view>
+  </view>
+  <view class="submit pd">
+    <van-button bind:click="handleSubmit" type="primary" block disabled="{{computed.isDisabled(title,content,catalog,favs)}}">发布</van-button>
+  </view>
+</view>
+
+<wxs module="computed">
+  function isDisabled(title, content, catalog = "", favs) {
+    if (!title.trim() || !content.trim() || !catalog.trim() || favs === '') {
+      return true
+    }
+
+    return false
+  }
+  module.exports = {
+    isDisabled: isDisabled
+  }
+</wxs>

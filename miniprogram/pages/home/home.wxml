@@ -1,0 +1,17 @@
+<!--pages/home.wxml-->
+<view class="page">
+  <z-search bind:click-input="handleSearchClick" disabled width="70%"></z-search>
+  <van-tabs active="{{ active }}" animated swipeable title-active-color="#02d199" color="#02d199" line-width="40rpx" bind:click="handleTabsClick">
+    <van-tab name="{{item.key}}" title="{{item.value}}" wx:for="{{tabList}}" wx:key="{{item.key}}"></van-tab>
+  </van-tabs>
+  <scroll-view scroll-y class="scroll bg pd" refresher-enabled bindscrolltolower="handleScrollToLower" bindrefresherrefresh="handleRefresh" refresher-triggered="{{isRefresh}}">
+    <list-item wx:for="{{postList}}" wx:key="{{item._id}}" item="{{item}}"></list-item>
+    <view class="flex-center" wx:if="{{isLoading}}">
+      <van-loading></van-loading>
+    </view>
+    <view class="empty" ws:if="{{isEnd}}">{{postList.length === 0 ? '暂无内容，尝试发布一条帖子吧！' : '没有了o(╥﹏╥)o~~~'}}</view>
+    <high-light></high-light>
+  </scroll-view>
+
+  <image bindtap="addPost" class="add-post" src="../../static/images/add-post.png" mode="aspectFill"></image>
+</view>

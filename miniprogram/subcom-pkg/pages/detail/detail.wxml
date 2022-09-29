@@ -1,0 +1,76 @@
+<view class="detail ">
+  <view class="title line-2">
+    <view>{{detailData.title}}</view>
+  </view>
+  <view class="detail-wrapper">
+    <view class="userinfo">
+      <view class="user">
+        <image src="{{detailData.uid ? detailData.uid.pic : ''}}" class="avatar" mode="aspectFill"></image>
+        <view class="info">
+          <view class="nickname">{{detailData.uid ? detailData.uid.nickname :"未知用户"}}</view>
+          <view class="publish-time">{{detailData.created}}</view>
+        </view>
+      </view>
+    </view>
+    <parser html="{{filter.escapeHtml(detailData.content)}}" class="content post ">
+    </parser>
+  </view>
+
+  <view class="detail-wrapper">
+    <view class="title pd0">评论</view>
+    <block wx:if="{{commentsList.length > 0}}">
+      <view class="comments-item" wx:for="{{commentsList}}">
+        <view class="userinfo">
+          <view class="user">
+            <image src="{{item.cuid ? item.cuid.pic : ''}}" class="avatar" mode="aspectFill"></image>
+            <view class="info">
+              <view class="nickname">{{item.cuid ? item.cuid.nickname : ''}}</view>
+              <view class="publish-time">{{item.created}}</view>
+            </view>
+          </view>
+          <view class="hand" bindtap="setHand" data-item="{{item}}">
+            <!-- icon -->
+            <van-icon data-item="{{item}}" name="good-job-o" size="40rpx" color="{{item.handed ? '#dd001b' : ''}}" />
+            <view style="{{item.handed ? 'color:#dd001b' :'color:#999'}}" data-item="{{item}}" wx:if="{{item.hands > 0}}">{{item.hands}}</view>
+          </view>
+        </view>
+        <rich-text nodes="{{filter.escapeHtml(item.content)}}" class="content line-3"></rich-text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="empty">暂无评论，快来给当前文章评论吧！</view>
+    </block>
+
+  </view>
+  <view class="footer" style="padding-bottom: {{pdb}}rpx;">
+    <block wx:if="{{footerType === 'static'}}">
+      <view class="send-comment-input" bindtap="toggleInput">
+        <!-- icon -->
+        <van-icon name="edit" size="36rpx" />
+        <view>写评论</view>
+      </view>
+      <view class="icons">
+        <view class="icon">
+          <van-icon name="chat-o" size="40rpx" />
+          <view>评论</view>
+        </view>
+        <view class="icon">
+          <van-icon name="star-o" size="40rpx" />
+          <view>收藏</view>
+        </view>
+        <view class="icon">
+          <van-icon name="good-job-o" size="40rpx" />
+          <view>点赞</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="input">
+        <input class="comments-input" type="text" focus bindblur="handleBlur" placeholder="请输入评论内容" />
+        <van-button type="primary" size="small" plain>发送</van-button>
+      </view>
+    </block>
+  </view>
+</view>
+
+<wxs src="../../../utils/escapeHtml.wxs" module="filter"></wxs>

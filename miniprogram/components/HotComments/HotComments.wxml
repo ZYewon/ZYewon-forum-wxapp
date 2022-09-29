@@ -1,0 +1,29 @@
+<!--components/HotPost/HotPost.wxml-->
+<scroll-view scroll-y class="hot-post" refresher-enabled bindscrolltolower="handleScrollToLower" bindrefresherrefresh="handleRefresh" refresher-triggered="{{isRefresh}}">
+  <view class="tag-container">
+    <tag bindtap="handleTagClick" data-index="{{index}}" wx:for="{{tagList}}" title="{{item}}" isActive="{{currentIndex === index}}"></tag>
+  </view>
+  <view class="post-list">
+    <block wx:if="{{commentsList.length > 0}}">
+      <view class="list-item" wx:for="{{commentsList}}">
+        <view class="index {{'index-'+(index+1)}}">
+          {{index < 9 ? '0' +(index+1) : index+1}} </view>
+            <image src="{{item.cuid ? item.cuid.pic : ''}}" class="avatar" mode="aspectFill"></image>
+            <view class="post-info">
+              <view class="title line-1">{{item.cuid ? item.cuid.nickname : '未知用户'}}</view>
+              <view class="text" wx:if="{{currentIndex === 0}}">
+                <view class="strong">
+                  {{item.count}}
+                </view>
+                条评论
+              </view>
+              <view class="text" wx:else>{{item.created}} 发表了评论</view>
+            </view>
+        </view>
+
+    </block>
+    <block wx:else>
+      <view class="empty">还没有评论/(ㄒoㄒ)/~~</view>
+    </block>
+  </view>
+</scroll-view>

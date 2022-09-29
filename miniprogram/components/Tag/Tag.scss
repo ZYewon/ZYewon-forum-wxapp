@@ -1,0 +1,13 @@
+/* components/Tag/Tag.wxss */
+.tag {
+  padding: 10rpx 30rpx;
+  font-size: 28rpx;
+  background-color: #f6f7ff;
+  display: inline-block;
+  border-radius: 30rpx;
+  color: #adaeb5;
+  &.active {
+    background-color: #d1f5f4;
+    color: #5cd2b4;
+  }
+}

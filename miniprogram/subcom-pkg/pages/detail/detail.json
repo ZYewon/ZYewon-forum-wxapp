@@ -1,0 +1,12 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "default",
+  "navigationBarTitleText": "文章详情",
+  "navigationBarBackgroundColor": "#f1f2f3",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "parser": "/components/wxParse/index"
+  }
+}

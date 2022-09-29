@@ -1,0 +1,54 @@
+<!--pages/center/center.wxml-->
+<view class="center page">
+  <view class="bg">
+    <image class="bg-img" mode="aspectFill" src="../../static/images/my_bg.png"></image>
+  </view>
+  <view class="user-box">
+    <view class="top">
+      <view class="info">
+        <image src="{{userinfo.pic || '/static/images/avatar.jpg'}}" class="avatar" mode="aspectFill"></image>
+        <view class="user">
+          <view class="nickname line-1">{{userinfo.nickname || '请登录'}}</view>
+          <!-- TODO：为什么要在套一层 view 是因为如果在外层的 view 上加样式会因为上面的名字长度而带偏,当然也得先把里面的设置为行内块 -->
+          <view wx:if="{{isLogin}}">
+            <view class="fav">积分：{{userinfo.favs}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="my-page" bindtap="handleClick" data-page="/usercom-pkg/pages/my/my">
+        个人主页
+      </view>
+    </view>
+    <view class="bottom" wx:if="{{isLogin}}">
+      <view bindtap="handleClick" class="bottom-item" data-page="/usercom-pkg/pages/mypost/mypost">
+        <view class="count" data-page="/usercom-pkg/pages/mypost/mypost">{{counts.postTotal}}</view>
+        <view class="desc" data-page="/usercom-pkg/pages/mypost/mypost">我的帖子</view>
+      </view>
+      <view bindtap="handleClick" class="bottom-item" data-page="/usercom-pkg/pages/mycollect/mycollect">
+        <view class="count" data-page="/usercom-pkg/pages/mycollect/mycollect">{{counts.collectTotal}}</view>
+        <view class="desc" data-page="/usercom-pkg/pages/mycollect/mycollect">我的收藏</view>
+      </view>
+      <view bindtap="handleClick" class="bottom-item">
+        <view class="count">0</view>
+        <view class="desc">历史浏览</view>
+      </view>
+    </view>
+  </view>
+  <view class="center-wrapper">
+    <view class="center-wrapper-item" wx:for="{{centerList}}" bindtap="handleClick" data-page="{{item.pagePath}}">
+      <view class="icon" data-page="{{item.pagePath}}">
+        <image mode="aspectFill" src="{{item.icon}}" data-page="{{item.pagePath}}"></image>
+      </view>
+      <view class="text" data-page="{{item.pagePath}}">{{item.title}}</view>
+    </view>
+  </view>
+  <view class="center-wrapper catalog-list">
+    <view class="center-wrapper-item" wx:for="{{catalogList}}">
+      <view class="icon">
+        <image mode="aspectFill" src="{{item.icon}}"></image>
+      </view>
+      <view class="text">{{item.title}}</view>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

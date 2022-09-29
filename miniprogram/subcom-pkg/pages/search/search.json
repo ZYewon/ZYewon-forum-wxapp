@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "搜索",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "z-search": "/components/Search/Search",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

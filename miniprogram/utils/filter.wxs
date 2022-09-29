@@ -1,0 +1,24 @@
+
+function formatCatalog(catalog) {
+  var data = {
+    ask: "提问",
+    share: "分享",
+    discuss: "讨论",
+    advice: "建议",
+    notice: "公告",
+    news: "动态",
+  };
+  return data[catalog];
+}
+
+function formatCount(e) {
+  return e > 999 ? "999+" : e;
+}
+
+
+
+
+module.exports = {
+  formatCatalog: formatCatalog,
+  formatCount: formatCount,
+};
