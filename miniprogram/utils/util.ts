@@ -50,3 +50,19 @@ export const delay = (time: number) => {
     }, time);
   });
 };
+
+export const formatSignFav = (count: number) => {
+  if (count < 5) {
+    return 5;
+  } else if (count >= 5 && count < 15) {
+    return 10;
+  } else if (count >= 15 && count < 30) {
+    return 15;
+  } else if (count >= 30 && count < 100) {
+    return 20;
+  } else if (count >= 100 && count < 365) {
+    return 30;
+  } else if (count >= 365) {
+    return 50;
+  }
+};

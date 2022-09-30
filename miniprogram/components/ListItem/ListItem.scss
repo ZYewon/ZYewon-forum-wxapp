@@ -85,9 +85,14 @@
   }
   .item-outher {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20rpx;
     font-size: 24rpx;
     color: #999;
+    .left {
+      display: flex;
+      gap: 20rpx;
+      align-items: center;
+    }
   }
 }

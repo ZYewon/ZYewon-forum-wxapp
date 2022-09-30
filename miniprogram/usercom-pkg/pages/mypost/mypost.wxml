@@ -1,2 +1,8 @@
 <!--usercom-pkg/pages/mypost/mypost.wxml-->
-<text>usercom-pkg/pages/mypost/mypost.wxml</text>
+<view class="mypost">
+  <list-item showAuthor="{{false}}" useRightSlot="{{true}}" wx:for="{{postList}}" wx:key="{{item._id}}" item="{{item}}">
+    <view slot="right" data-item="{{item}}">
+      <van-icon name="delete-o" size="40rpx" catchtap="handleTap" data-item="{{item}}" data-index="{{index}}" />
+    </view>
+  </list-item>
+</view>

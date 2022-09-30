@@ -2,6 +2,7 @@
 import { createStoreBindings } from "mobx-miniprogram-bindings";
 import { userStore } from "../../../store/user";
 import { wxLogin } from "../../../api/login";
+import Ws from "../../../config/ws";
 const app = getApp();
 Page({
   /**
@@ -9,6 +10,19 @@ Page({
    */
   data: {
     code: "",
+  },
+  // 登陆成功后初始化 ws
+  initWs() {
+    const ws = new Ws({}, (msg) => {
+      app.globalData.msgCount = msg.message;
+      if (msg.message !== 0) {
+        wx.setTabBarBadge({
+          index: 1,
+          text: String(msg.message),
+        });
+      }
+    });
+    ws.connet();
   },
   // 微信登陆
   wxLogin() {
@@ -22,6 +36,7 @@ Page({
         if (result.code === 200) {
           wx.setStorageSync("token", result.token);
           wx.setStorageSync("userinfo", JSON.stringify(result.data));
+          this.initWs();
           app.globalData.isLogin = true;
         }
         wx.hideLoading();

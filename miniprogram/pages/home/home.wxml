@@ -10,7 +10,7 @@
       <van-loading></van-loading>
     </view>
     <view class="empty" ws:if="{{isEnd}}">{{postList.length === 0 ? '暂无内容，尝试发布一条帖子吧！' : '没有了o(╥﹏╥)o~~~'}}</view>
-    <high-light></high-light>
+
   </scroll-view>
 
   <image bindtap="addPost" class="add-post" src="../../static/images/add-post.png" mode="aspectFill"></image>

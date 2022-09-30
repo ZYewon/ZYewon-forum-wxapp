@@ -6,6 +6,7 @@ interface IAppOption {
     isLogin?: boolean;
     subscriptionSetting?: any;
     tmplIds?:string[]
+    msgCount?:number
   };
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }

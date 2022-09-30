@@ -1,0 +1,193 @@
+/* usercom-pkg/pages/sign/sign.wxss */
+.sign {
+  background-color: #f1f2f3;
+  padding-bottom: 30rpx;
+}
+.bg {
+  height: 260rpx;
+  width: 100vw;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.fav {
+  position: absolute;
+  width: 100vw;
+  top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.panel {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+  z-index: 12;
+  position: relative;
+  box-shadow: 0 0 20rpx rgba($color: #000000, $alpha: 0.2);
+}
+
+.sign-container {
+  margin-top: -200rpx;
+
+  .title {
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  .sign-list {
+    padding-top: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    align-items: center;
+    .sign-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10rpx;
+      .sign-icon {
+        width: 60rpx;
+        height: 60rpx;
+        border-radius: 50%;
+        background-color: #c8f4e8;
+        position: relative;
+        overflow: hidden;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #09ac80;
+        font-size: 20rpx;
+        &.active {
+          background-color: #1cca99;
+          box-shadow: 0 0 20rpx rgba($color: #02d199, $alpha: 0.6);
+          &::before {
+            content: "✔";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            background-color: #1cca99;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .bar {
+        position: absolute;
+        right: -38rpx;
+        top: 30rpx;
+        content: "";
+        height: 8rpx;
+        border-radius: 20rpx;
+        width: 40rpx;
+        background-color: #c8f4e8;
+        transition: all 0.3s;
+        z-index: 30;
+        &.active {
+          background-color: #1cca99;
+        }
+      }
+    }
+  }
+  .sign-btn {
+    margin-top: 40rpx;
+  }
+}
+
+.sign-desc {
+  margin-top: 30rpx;
+  .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32rpx;
+  }
+  .num {
+    margin: 20rpx 0;
+  }
+  .rule {
+    margin: 10rpx;
+    width: 100%;
+    border: 1px solid #f1f2f3;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    .row {
+      display: flex;
+      box-sizing: border-box;
+      border-bottom: 1px solid #f1f2f3;
+      color: #666;
+      view {
+        box-sizing: border-box;
+        width: 50%;
+        text-align: center;
+        padding: 20rpx;
+        border-right: 1px solid #f1f2f3;
+        &:last-child {
+          border-right: none;
+        }
+        &.em {
+          background-color: #efefef;
+        }
+      }
+    }
+  }
+}
+
+.sign-success {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%);
+  z-index: 999;
+  width: 70%;
+  height: 350rpx;
+  background-color: #fff;
+  box-shadow: 0 0 30rpx rgba($color: #000000, $alpha: 0.2);
+  border-radius: 30rpx;
+  .success-img {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -50rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 50rpx rgba($color: #02d199, $alpha: 0.6);
+  }
+  .info {
+    position: absolute;
+    width: 75%;
+    margin: 0 auto;
+    top: 75rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    gap: 20rpx;
+    .title {
+      color: #09ac80;
+      font-weight: bold;
+    }
+    .remark {
+      font-size: 24rpx;
+      color: #999;
+      margin: 30rpx 0;
+    }
+  }
+}

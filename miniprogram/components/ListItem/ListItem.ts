@@ -1,5 +1,8 @@
 // components/ListItem/ListItem.ts
 Component({
+  options: {
+    multipleSlots: true,
+  },
   /**
    * 组件的属性列表
    */
@@ -7,6 +10,14 @@ Component({
     item: {
       type: Object,
       value: () => ({}),
+    },
+    showAuthor: {
+      type: Boolean,
+      value: true,
+    },
+    useRightSlot: {
+      type: Boolean,
+      value: false,
     },
   },
   /**

@@ -5,7 +5,7 @@
     <text class="title">{{item.title}}</text>
   </view>
 
-  <view class="item-author">
+  <view class="item-author" wx:if="{{showAuthor}}">
     <image class="author-avatar" src="{{item.uid ? item.uid.pic : '/static/images/avatar.jpg'}}"></image>
     <text class="author-nickname">{{item.uid ? item.uid.nickname :"未知用户"}}</text>
   </view>
@@ -16,8 +16,14 @@
   </view>
 
   <view class="item-outher">
-    <text class="answer">{{ filters.formatCount(item.answer) }} 回复</text>
-    <text class="date">{{item.created}}</text>
+    <view class="left">
+      <text class="answer">{{ filters.formatCount(item.answer) }} 回复</text>
+      <text class="date">{{item.created}}</text>
+    </view>
+    <view class="right" wx:if="{{useRightSlot}}">
+      <slot name="right">
+      </slot>
+    </view>
   </view>
 </view>
 

@@ -1,0 +1,30 @@
+/* components/SignRule/SignRule.wxss */
+.rule {
+  margin: 10rpx;
+  width: 100%;
+  border: 1px solid #f1f2f3;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  .row {
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f1f2f3;
+    color: #666;
+    &:last-child {
+      border-bottom: none;
+    }
+    view {
+      box-sizing: border-box;
+      width: 50%;
+      text-align: center;
+      padding: 20rpx;
+      border-right: 1px solid #f1f2f3;
+      &:last-child {
+        border-right: none;
+      }
+      &.em {
+        background-color: #efefef;
+      }
+    }
+  }
+}

@@ -123,6 +123,9 @@ Page({
   goDetail(e: any) {
     const data = e.target.dataset.detail;
     // 跳转至帖子详情页
+    wx.navigateTo({
+      url: "/subcom-pkg/pages/detail/detail?tid=" + data._id,
+    });
   },
   /**
    * 生命周期函数--监听页面加载

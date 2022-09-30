@@ -35,3 +35,31 @@ export const updateUser = (data: any) => {
     data,
   });
 };
+
+export const getMyPost = (params: any) => {
+  return request.get({
+    url: "/user/mypost",
+    data: params,
+  });
+};
+// 签到
+export const userSign = () => {
+  return request.get({
+    url: "/user/fav",
+  });
+};
+
+// 获取用户一周内的签到记录
+export const getSingWeek = () => {
+  return request.get({
+    url: "/user/sign-week",
+  });
+};
+
+// 删除我的文章
+export const deletePostById = (params: any) => {
+  return request.delete({
+    url: "/user/delete-post",
+    data: params,
+  });
+};

@@ -1,0 +1,30 @@
+<view class="rule">
+  <view class="row">
+    <view class="em">连续签到天数</view>
+    <view class="em">每天活动积分</view>
+  </view>
+  <view class="row">
+    <view class="left">小于5天</view>
+    <view class="right">5积分</view>
+  </view>
+  <view class="row">
+    <view class="left">大于或等于5天</view>
+    <view class="right">10积分</view>
+  </view>
+  <view class="row">
+    <view class="left">大于或等于15天</view>
+    <view class="right">15积分</view>
+  </view>
+  <view class="row">
+    <view class="left">大于或等于30天</view>
+    <view class="right">20积分</view>
+  </view>
+  <view class="row">
+    <view class="left">大于或等于100天</view>
+    <view class="right">30积分</view>
+  </view>
+  <view class="row">
+    <view class="left">大于或等于365天</view>
+    <view class="right">50积分</view>
+  </view>
+</view>

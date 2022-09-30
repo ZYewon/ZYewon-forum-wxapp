@@ -11,50 +11,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "name": "",
-          "pathName": "subcom-pkg/pages/mobile-login/mobile-login",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/msg/msg",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/hot/hot",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/center/center",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "subcom-pkg/pages/add-post/add-post",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "usercom-pkg/pages/settings/settings",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

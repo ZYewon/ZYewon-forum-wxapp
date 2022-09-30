@@ -1,2 +1,44 @@
-<!--usercom-pkg/pages/sign/sign.wxml-->
-<text>usercom-pkg/pages/sign/sign.wxml</text>
+<view class="sign ">
+  <view class="bg">
+    <image class="bg-img" mode="aspectFill" src="/static/images/my_bg.png"></image>
+  </view>
+  <view class="fav">
+    <van-icon name="award" color="#e1aa44" size="30rpx" />
+    <view>可用积分：{{userinfo.favs}}</view>
+  </view>
+  <view class="sign-container panel">
+    <view class="title">已连续签到 {{userinfo.count}} 天</view>
+    <view class="sign-list">
+      <view class="sign-item" wx:for="{{signList}}">
+        <view class="sign-icon {{item.isSign ? 'active' : ''}}">
+          {{item.disabled ? '过时' : item.fav}}
+        </view>
+        <view class="bar {{signList[index].isSign && signList[index+1] && signList[index+1].isSign ? 'active' : ''}}" wx:if="{{index !== 6}}"></view>
+        <view class="sign-date">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="sign-btn">
+      <van-button bind:click="handleSign" disabled="{{userinfo.isSign}}" color="#02d199" block>{{userinfo.isSign ? '已签到' : '立即签到 '}}</van-button>
+    </view>
+  </view>
+  <view class="sign-desc panel">
+    <view class="title">签到规则</view>
+    <view class="num">
+      1：“签到”可获得的社区积分如下
+    </view>
+    <sign-rule></sign-rule>
+    <view class="num">2:中间若有间隔,则连续签到天数重新计算</view>
+    <view class="num">3:不可使用程序自动签到,否则积分清零</view>
+  </view>
+
+  <view class="sign-success" wx:if="{{isShowSignSuccess}}">
+    <image class="success-img" src="/static/images/sign.png"></image>
+    <view class="info">
+      <view class="title">恭喜您,签到成功!</view>
+      <view class="remark">
+        恭喜您获得{{favs}}积分
+      </view>
+      <van-button bind:click="handleConfirm" block color="#02d199">好的</van-button>
+    </view>
+  </view>
+</view>

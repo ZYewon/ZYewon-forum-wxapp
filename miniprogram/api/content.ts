@@ -13,13 +13,6 @@ export const uploadImg = (data: any) => {
     data,
   });
 };
-// 发表帖子
-// export const addPost = (data: any) => {
-//   return request.post({
-//     url: "/content/add",
-//     data,
-//   });
-// };
 // 获取文章详情
 // TODO: 可以添加 token 获取对当前文章的是否收藏、点赞
 export const getDetail = (tid: string, isLogin: boolean) => {
